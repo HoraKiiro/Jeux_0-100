@@ -36,12 +36,17 @@ button.addEventListener("click", function () {
                 let paragraphe = document.createElement("p");                       
                 let textParagraphe = document.createTextNode(`Le nombre ${number.value} est trop bas ! `);      
                 paragraphe.appendChild(textParagraphe);                                         
-                document.getElementById("parent").appendChild(paragraphe);  
+                document.getElementById("parent").appendChild(paragraphe);
+                paragraphe.classList.add("styleParagraphe");
                 vie--;
 
             } else if (number.value > random) {
                 window.alert("Trop haut");
-                vie = vie - 1;
+                let paragraphe = document.createElement("p");                       
+                let textParagraphe = document.createTextNode(`Le nombre ${number.value} est trop haut ! `);      
+                paragraphe.appendChild(textParagraphe);                                         
+                document.getElementById("parent").appendChild(paragraphe); 
+                vie--;
 
             } else {
                 window.alert("GG");
@@ -59,6 +64,11 @@ reset.addEventListener("click", function () {
     vie =  10;
     random = Math.floor(Math.random() * (100 - 1)) + 1;
     compteur.innerHTML = vie;
+
+    for (var i = 10; i > 0; i--) {
+        var supprText = document.querySelector(".styleParagraphe");
+        supprText.parentNode.removeChild(supprText);
+    }
 })
 
 console.log(compteur);
