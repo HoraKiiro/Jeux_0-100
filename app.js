@@ -1,6 +1,6 @@
 let random = Math.floor(Math.random() * (100 - 1)) + 1;
 
-let number;
+let number = document.querySelector("#number");
 
 const button = document.querySelector("#button");
 
@@ -18,9 +18,8 @@ test.innerHML = random;
 
 
 
-
 button.addEventListener("click", function () {
-    number = document.querySelector("#number");
+    
     
     if (regex.test(number.value)) {
 
@@ -57,18 +56,31 @@ button.addEventListener("click", function () {
     else{
         window.alert("Champs incorrect");
     }
+    
+    document.getElementById("number").value = "";
     compteur.innerHTML = vie;
 })
 
-reset.addEventListener("click", function () {
-    vie =  10;
-    random = Math.floor(Math.random() * (100 - 1)) + 1;
-    compteur.innerHTML = vie;
 
-    for (var i = 10; i > 0; i--) {
+
+number.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("button").click();
+    }
+});
+
+reset.addEventListener("click", function () {
+    
+    random = Math.floor(Math.random() * (100 - 1)) + 1;
+    
+    for (var i = vie; i < 10; i++) {
         var supprText = document.querySelector(".styleParagraphe");
         supprText.parentNode.removeChild(supprText);
     }
+
+    compteur.innerHTML = vie;
+    vie =  10;
 })
 
 console.log(compteur);
