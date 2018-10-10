@@ -8,13 +8,12 @@ const reset = document.querySelector("#reset");
 
 let test = document.querySelector("#test");
 
-let compteur = document.querySelector("#compteur");
+var compteur = document.querySelector("#compteur");
 
-let vie = 10;
+var vie = 10;
 
 let regex = /^(?:[1-9]|[1-9][0-9]|)$/;
 
-test.innerHML = random;
 
 
 
@@ -31,7 +30,6 @@ button.addEventListener("click", function () {
         } else {
 
             if (number.value < random) {
-                window.alert("Trop bas");
                 let paragraphe = document.createElement("p");                       
                 let textParagraphe = document.createTextNode(`Le nombre ${number.value} est trop bas ! `);      
                 paragraphe.appendChild(textParagraphe);                                         
@@ -40,16 +38,15 @@ button.addEventListener("click", function () {
                 vie--;
 
             } else if (number.value > random) {
-                window.alert("Trop haut");
                 let paragraphe = document.createElement("p");                       
                 let textParagraphe = document.createTextNode(`Le nombre ${number.value} est trop haut ! `);      
                 paragraphe.appendChild(textParagraphe);                                         
                 document.getElementById("parent").appendChild(paragraphe); 
+                paragraphe.classList.add("styleParagraphe");
                 vie--;
 
             } else {
                 window.alert("GG");
-                vie = "";
             }
         }
     } 
@@ -78,9 +75,8 @@ reset.addEventListener("click", function () {
         var supprText = document.querySelector(".styleParagraphe");
         supprText.parentNode.removeChild(supprText);
     }
-
-    compteur.innerHTML = vie;
     vie =  10;
+    compteur.innerHTML = vie;
 })
 
 console.log(compteur);
