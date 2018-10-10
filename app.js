@@ -14,10 +14,6 @@ let vie = 10;
 
 let regex = /^(?:[1-9]|[1-9][0-9]|)$/;
 
-var essai = document.createElement('p');
-
-document.getElementById('parent').appendChild(essai);
-
 test.innerHML = random;
 
 
@@ -37,9 +33,11 @@ button.addEventListener("click", function () {
 
             if (number.value < random) {
                 window.alert("Trop bas");
-                var essaiTextBas = document.createTextNode("Le nombre "+ number.value +" est trop bas ! ");
-                essai.appendChild(essaiTextBas);
-                vie = vie - 1;
+                let paragraphe = document.createElement("p");                       
+                let textParagraphe = document.createTextNode(`Le nombre ${number.value} est trop bas ! `);      
+                paragraphe.appendChild(textParagraphe);                                         
+                document.getElementById("parent").appendChild(paragraphe);  
+                vie--;
 
             } else if (number.value > random) {
                 window.alert("Trop haut");
