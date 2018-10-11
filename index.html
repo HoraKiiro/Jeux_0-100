@@ -7,33 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Jeux 0-100</title>
 </head>
 
 <body>
-    <header class="container text-center">
-        <h1>0-100 Le jeu du + ou - !</h1>
+    <header class="text-center text-white">
+        <h1 class="font-weight-bold">0-100 : le jeu du <i class="fas fa-plus-square"></i> ou <i class="fas fa-minus-square"></i> !</h1>
     </header>
 
     <section class="container-fluid">
         <div class="container">
             <div>
                 <h2>Règles du jeu :</h2>
-                <p>Les règles sont simples, vous devez entrer un nombre entre 0 et 100 pour trouver le nombre aléatoire
-                    à l'aide des indications qui vous seront fournies, vous avez 10 vies pour gagner la partie.</p>
+                <p class="mt-4">Les règles sont simples, vous devez entrer un nombre entre 0 et 100 pour trouver le nombre aléatoire
+                à l'aide des indications qui vous seront fournies, vous avez 10 vies pour gagner la partie.</p>
             </div>
             <div>
-                <label for="compteur"> Vie :<p id="compteur"></p></label>
+                <label for="compteur" class="d-flex font-weight-bold mt-5"> Nombre de vie restant :<p id="compteur" class="ml-2"></p></label>
             </div>
             <div>
-                <input type="number" id="number">
-                <div>
-                    <button id="button" name="button">Valider</button>
-                    <button id="reset" name="reset">rejouer</button>
+                <input type="number" id="number" class="form-control mt-4">
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary ml-2" id="button" name="button">Valider</button>
+                    <button class="btn btn-primary" id="reset" name="reset">Rejouer</button>
                 </div>
             </div>
-            <div id="parent">
+            <div id="parent" class="text-center mt-4 d-flex flex-column-reverse">
 
             </div>
 
