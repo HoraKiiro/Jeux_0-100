@@ -26,7 +26,12 @@ button.addEventListener("click", function () {
             window.alert("Champs incorrect");
 
         } else if (vie === 0) {
-            window.alert("Youpi tralala jsuis nul")
+                document.getElementById("button").disabled = true;
+                let paragraphe = document.createElement("p");                       
+                let textParagraphe = document.createTextNode(`Perdu ! c'était le nombre ${random} `);      
+                paragraphe.appendChild(textParagraphe);                                         
+                document.getElementById("parent").appendChild(paragraphe);
+                paragraphe.classList.add("styleParagraphe");
         } else {
 
             if (number.value < random) {
@@ -46,7 +51,12 @@ button.addEventListener("click", function () {
                 vie--;
 
             } else {
-                window.alert("GG");
+                document.getElementById("button").disabled = true;
+                let paragraphe = document.createElement("p");                       
+                let textParagraphe = document.createTextNode(`Gagné c'était le nombre ${number.value} il vous restais ${vie} vie !`);      
+                paragraphe.appendChild(textParagraphe);                                         
+                document.getElementById("parent").appendChild(paragraphe); 
+                paragraphe.classList.add("styleParagraphe");
             }
         }
     } 
@@ -71,10 +81,11 @@ reset.addEventListener("click", function () {
     
     random = Math.floor(Math.random() * (100 - 1)) + 1;
     
-    for (var i = vie; i < 10; i++) {
+    for (var i = vie; i < 11; i++) {
         var supprText = document.querySelector(".styleParagraphe");
         supprText.parentNode.removeChild(supprText);
     }
+    document.getElementById("button").disabled = false;
     vie =  10;
     compteur.innerHTML = vie;
 })
